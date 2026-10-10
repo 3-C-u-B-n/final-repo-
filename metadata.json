@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Duyên Dáng - Phối Đồ Áo Dài \u0026 Phác Thảo 2D",
+  "description": "Ứng dụng tư vấn phối trang phục áo dài truyền thống và hiện đại theo hoàn cảnh, đánh giá độ phù hợp và vẽ phác thảo thời trang 2D.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

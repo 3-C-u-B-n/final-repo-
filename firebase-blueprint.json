@@ -1,0 +1,62 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Thông tin hồ sơ người dùng lưu trữ trên Firebase",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "favoritePalettes": { "type": "array" },
+        "savedCount": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "displayName"]
+    },
+    "SavedOutfit": {
+      "title": "SavedOutfit",
+      "description": "Bản phối trang phục Việt phục được người dùng lưu trữ",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "authorName": { "type": "string" },
+        "authorPhoto": { "type": "string" },
+        "title": { "type": "string" },
+        "gender": { "type": "string", "enum": ["female", "male"] },
+        "occasionId": { "type": "string" },
+        "garmentId": { "type": "string" },
+        "fabricId": { "type": "string" },
+        "colorId": { "type": "string" },
+        "customColorHex": { "type": "string" },
+        "customPantHex": { "type": "string" },
+        "headpieceId": { "type": "string" },
+        "jewelryId": { "type": "string" },
+        "handheldId": { "type": "string" },
+        "footwearId": { "type": "string" },
+        "backgroundId": { "type": "string" },
+        "harmonyScore": { "type": "number" },
+        "traditionStatus": { "type": "string" },
+        "note": { "type": "string" },
+        "isPublic": { "type": "boolean" },
+        "likesCount": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "title", "garmentId", "colorId"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Bộ sưu tập hồ sơ người dùng"
+    },
+    "/savedOutfits/{outfitId}": {
+      "schema": { "$ref": "#/entities/SavedOutfit" },
+      "description": "Bộ sưu tập các mẫu phối trang phục Việt phục cá nhân và cộng đồng"
+    }
+  }
+}
